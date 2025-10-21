@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校园设施 - 高州市第二中学</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        'primary-light': '#3B82F6',
+                        'primary-lighter': '#93C5FD',
+                        danger: '#DC2626',
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        light: '#F3F4F6',
+                        gray: '#9CA3AF',
+                        dark: '#374151',
+                        darker: '#111827'
+                    },
+                    fontFamily: {
+                        sans: ['"Microsoft YaHei"', '"微软雅黑"', '"Segoe UI"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .nav-link {
+                position: relative;
+            }
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: white;
+                transition: width 0.3s ease;
+            }
+            .nav-link:hover::after,
+            .nav-link.active::after {
+                width: 100%;
+            }
+            .about-section p {
+                margin-bottom: 1rem;
+                text-align: justify;
+                line-height: 1.8;
+            }
+            .about-section h3 {
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin: 2rem 0 1rem 0;
+                color: #1E3A8A;
+            }
+            .about-section h4 {
+                font-size: 1.25rem;
+                font-weight: 500;
+                margin: 1.5rem 0 0.75rem 0;
+                color: #1E3A8A;
+            }
+            .category-active {
+                background-color: #1E3A8A;
+                color: white;
+            }
+            .category-active:hover {
+                background-color: #3B82F6 !important;
+                color: white !important;
+            }
+            .facility-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-light font-sans text-dark">
+    <!-- 顶部导航栏 -->
+    <header class="bg-primary text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4">
+            <!-- 学校Logo和标题 -->
+            <div class="flex items-center justify-between py-3">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-3">
+                        <span class="text-primary text-2xl font-bold">
+                            <img src="a.png" alt="学校Logo" class="w-11 h-11">
+                        </span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold">高州市第二中学</h1>
+                        <p class="text-xs text-primary-lighter">Gaozhou No.2 Middle School</p>
+                    </div>
+                </div>
+                
+                <!-- 搜索框 -->
+                <div class="hidden md:block">
+                    <div class="relative">
+                        <input type="text" placeholder="搜索信息..." class="w-64 h-9 pl-3 pr-10 rounded-md bg-white/20 focus:bg-white/30 focus:outline-none text-sm">
+                        <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-white">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 主导航菜单 -->
+            <nav class="py-3 border-t border-primary-light/30">
+                <ul class="flex flex-wrap">
+                    <li class="mr-8">
+                        <a href="home.html" class="nav-link text-white hover:text-primary-lighter transition-colors block py-1">首页</a>
+                    </li>
+                    <li class="mr-8">
+                        <a href="news.html" class="nav-link text-white hover:text-primary-lighter transition-colors block py-1">新闻公告</a>
+                    </li>
+                    <li class="mr-8">
+                        <a href="about.html" class="nav-link text-white hover:text-primary-lighter transition-colors block py-1">学校简介</a>
+                    </li>
+                    <li class="mr-8">
+                        <a href="admission.html" class="nav-link text-white hover:text-primary-lighter transition-colors block py-1">招生信息</a>
+                    </li>
+                    <li class="mr-8">
+                        <a href="#" class="nav-link text-white hover:text-primary-lighter transition-colors block py-1">师资力量</a>
+                    </li>
+                    <li class="mr-8">
+                        <a href="#" class="nav-link text-white hover:text-primary-lighter transition-colors block py-1">校园活动</a>
+                    </li>
+                    <li class="mr-8">
+                        <a href="#" class="nav-link text-white hover:text-primary-lighter transition-colors block py-1">资源中心</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="nav-link text-white hover:text-primary-lighter transition-colors block py-1">联系我们</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 页面标题栏 -->
+    <div class="bg-white py-4 border-b border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center">
+                <h2 class="text-xl font-bold text-primary">校园设施</h2>
+                <div class="ml-4 text-sm text-gray">
+                    <a href="home.html" class="hover:text-primary">首页</a>
+                    <span class="mx-2">/</span>
+                    <a href="about.html" class="hover:text-primary">学校简介</a>
+                    <span class="mx-2">/</span>
+                    <span>校园设施</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主要内容区 -->
+    <main class="container mx-auto px-4 py-6">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <!-- 左侧边栏 -->
+            <aside class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <div class="p-4 bg-primary text-white">
+                        <h3 class="font-bold">学校简介导航</h3>
+                    </div>
+                    <div class="p-2">
+                        <button class="w-full text-left px-4 py-3 border-b border-light hover:bg-light rounded-t-lg">
+                            <i class="fa fa-home mr-2"></i>学校概况
+                        </button>
+                        <button class="w-full text-left px-4 py-3 border-b border-light hover:bg-light rounded">
+                            <i class="fa fa-history mr-2"></i>历史沿革
+                        </button>
+                        <button class="w-full text-left px-4 py-3 border-b border-light hover:bg-light rounded">
+                            <i class="fa fa-lightbulb-o mr-2"></i>办学理念
+                        </button>
+                        <button class="w-full text-left px-4 py-3 border-b border-light category-active rounded">
+                            <i class="fa fa-building mr-2"></i>校园设施
+                        </button>
+                        <button class="w-full text-left px-4 py-3 border-b border-light hover:bg-light rounded">
+                            <i class="fa fa-trophy mr-2"></i>荣誉成就
+                        </button>
+                        <button class="w-full text-left px-4 py-3 hover:bg-light rounded">
+                            <i class="fa fa-users mr-2"></i>学校领导
+                        </button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- 右侧主内容区 -->
+            <div class="lg:col-span-3">
+                <!-- 校园设施介绍 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden mb-6">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="g.jpg" alt="校园设施全景" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <div class="p-6 text-white">
+                                <h3 class="text-2xl font-bold mb-2">现代化校园设施</h3>
+                                <p class="text-sm opacity-90">为学生提供优质的学习和生活环境</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 md:p-8 about-section">
+                        <p>高州市第二中学占地面积约500亩，建筑面积60000多平方米。学校拥有完善的现代化教学和生活设施，为师生提供了良好的学习、工作和生活环境。校园布局合理，环境优美，是一所现代化的花园式学校。</p>
+                        
+                        <h3>教学设施</h3>
+                        <p>学校拥有多栋现代化教学楼，配备了先进的教学设备和完善的教学辅助设施，为教学活动提供了有力保障。</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                            <!-- 教学楼 -->
+                            <div class="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 facility-card">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="o.jpg" alt="教学楼" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
+                                            <i class="fa fa-building text-lg"></i>
+                                        </div>
+                                        <h4 class="font-bold">教学楼</h4>
+                                    </div>
+                                    <p class="text-sm text-dark/80">学校拥有3栋现代化教学楼，共有60间标准教室，每间教室配备了多媒体教学设备、空调和完善的照明系统，为学生提供舒适的学习环境。</p>
+                                </div>
+                            </div>
+                            
+                            <!-- 实验楼 -->
+                            <div class="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 facility-card">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="m.webp" alt="实验楼" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
+                                            <i class="fa fa-flask text-lg"></i>
+                                        </div>
+                                        <h4 class="font-bold">实验楼</h4>
+                                    </div>
+                                    <p class="text-sm text-dark/80">实验楼配备了物理、化学、生物等学科的标准实验室18间，每间实验室都按照省级标准配置了先进的实验设备和安全设施，满足教学和学生自主实验的需求。</p>
+                                </div>
+                            </div>
+                            
+                            <!-- 图书馆 -->
+                            <div class="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 facility-card">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1577495154712-52d3a2c715a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="图书馆" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
+                                            <i class="fa fa-book text-lg"></i>
+                                        </div>
+                                        <h4 class="font-bold">图书馆</h4>
+                                    </div>
+                                    <p class="text-sm text-dark/80">图书馆占地面积2000平方米，藏书15万余册，期刊杂志200余种。馆内设有阅览区、藏书区、电子阅读区等功能区，为师生提供了良好的阅读和学习空间。</p>
+                                </div>
+                            </div>
+                            
+                            <!-- 计算机教室 -->
+                            <div class="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 facility-card">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="计算机教室" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
+                                            <i class="fa fa-desktop text-lg"></i>
+                                        </div>
+                                        <h4 class="font-bold">计算机教室</h4>
+                                    </div>
+                                    <p class="text-sm text-dark/80">学校拥有6间现代化计算机教室，配备了400余台高性能计算机，所有教室均接入高速网络，满足信息技术教学和学生信息化学习的需求。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>体育设施</h3>
+                        <p>学校拥有完善的体育设施，为学生提供了充足的运动空间，促进学生身心健康发展。</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                            <!-- 操场 -->
+                            <div class="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 facility-card">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="操场" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
+                                            <i class="fa fa-futbol-o text-lg"></i>
+                                        </div>
+                                        <h4 class="font-bold">标准操场</h4>
+                                    </div>
+                                    <p class="text-sm text-dark/80">学校拥有400米标准塑胶跑道田径场，足球场采用天然草坪，配备了完善的照明设施，可满足日常教学和举办运动会的需求。</p>
+                                </div>
+                            </div>
+                            
+                            <!-- 体育馆 -->
+                            <div class="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 facility-card">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1559561155-1ed413689b44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="体育馆" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
+                                            <i class="fa fa-building-o text-lg"></i>
+                                        </div>
+                                        <h4 class="font-bold">体育馆</h4>
+                                    </div>
+                                    <p class="text-sm text-dark/80">现代化体育馆面积3000平方米，设有篮球场、羽毛球场、乒乓球场等多个运动区域，配备了专业的运动器材和观众席，可容纳1000余人观看比赛。</p>
+                                </div>
+                            </div>
+                            
+                            <!-- 游泳池 -->
+                            <div class="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 facility-card">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1571781926291-c840c8d93b4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="游泳池" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
+                                            <i class="fa fa-tint text-lg"></i>
+                                        </div>
+                                        <h4 class="font-bold">游泳池</h4>
+                                    </div>
+                                    <p class="text-sm text-dark/80">学校拥有标准游泳池，长50米，宽25米，设有8条泳道，配备了专业的水循环和消毒系统，为学生提供安全、卫生的游泳环境。</p>
+                                </div>
+                            </div>
+                            
+                            <!-- 篮球场 -->
+                            <div class="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 facility-card">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="篮球场" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
+                                            <i class="fa fa-basketball-ball text-lg"></i>
+                                        </div>
+                                        <h4 class="font-bold">篮球场</h4>
+                                    </div>
+                                    <p class="text-sm text-dark/80">学校设有6个标准篮球场，其中2个为室内篮球场，4个为室外篮球场，所有篮球场均采用专业的运动地板或地面材料，为学生提供良好的篮球运动环境。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>生活设施</h3>
+                        <p>学校提供完善的生活设施，确保学生在校期间能够舒适地生活，专心学习。</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                            <!-- 学生宿舍 -->
+                            <div class="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 facility-card">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="学生宿舍" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
+                                            <i class="fa fa-bed text-lg"></i>
+                                        </div>
+                                        <h4 class="font-bold">学生宿舍</h4>
+                                    </div>
+                                    <p class="text-sm text-dark/80">学校拥有6栋学生公寓，可容纳3000名学生住宿。宿舍为4-6人间，配备了独立卫生间、空调、热水器、书桌、衣柜等设施，为学生提供舒适的生活环境。</p>
+                                </div>
+                            </div>
+                            
+                            <!-- 食堂 -->
+                            <div class="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 facility-card">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2085&q=80" alt="食堂" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
+                                            <i class="fa fa-cutlery text-lg"></i>
+                                        </div>
+                                        <h4 class="font-bold">食堂</h4>
+                                    </div>
+                                    <p class="text-sm text-dark/80">学校食堂面积5000平方米，可同时容纳4000人就餐。食堂设有多个就餐区，提供多样化的菜品选择，确保食品安全和营养均衡。</p>
+                                </div>
+                            </div>
+                            
+                            <!-- 医务室 -->
+                            <div class="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 facility-card">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="医务室" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
+                                            <i class="fa fa-medkit text-lg"></i>
+                                        </div>
+                                        <h4 class="font-bold">医务室</h4>
+                                    </div>
+                                    <p class="text-sm text-dark/80">学校医务室配备了专业的医护人员和基本的医疗设备，能够处理常见疾病和意外伤害，为师生提供基本的医疗服务和健康咨询。</p>
+                                </div>
+                            </div>
+                            
+                            <!-- 浴室 -->
+                            <div class="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 facility-card">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="浴室" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
+                                            <i class="fa fa-shower text-lg"></i>
+                                        </div>
+                                        <h4 class="font-bold">浴室</h4>
+                                    </div>
+                                    <p class="text-sm text-dark/80">学校设有公共浴室，配备了热水供应系统，采用智能化管理，为学生提供方便、舒适的洗浴环境。浴室环境整洁，设施完善，确保学生的个人卫生需求。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>文化艺术设施</h3>
+                        <p>学校重视学生的全面发展，提供了丰富的文化艺术设施，培养学生的艺术素养和创新能力。</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                            <!-- 艺术中心 -->
+                            <div class="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 facility-card">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="艺术中心" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
+                                            <i class="fa fa-music text-lg"></i>
+                                        </div>
+                                        <h4 class="font-bold">艺术中心</h4>
+                                    </div>
+                                    <p class="text-sm text-dark/80">学校艺术中心设有音乐教室、美术教室、舞蹈教室等专业教室，配备了钢琴、电子琴、美术器材等专业设备，为学生的艺术学习和创作提供了良好的条件。</p>
+                                </div>
+                            </div>
+                            
+                            <!-- 报告厅 -->
+                            <div class="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 facility-card">
+                                <div class="h-48 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="报告厅" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3">
+                                            <i class="fa fa-bullhorn text-lg"></i>
+                                        </div>
+                                        <h4 class="font-bold">报告厅</h4>
+                                    </div>
+                                    <p class="text-sm text-dark/80">学校设有多功能报告厅，可容纳800余人，配备了先进的音响、灯光和多媒体设备，是学校举办各类学术报告、文艺演出和大型会议的重要场所。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white mt-12">
+        <div class="container mx-auto px-4 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">学校概况</h3>
+                    <ul class="space-y-2 text-sm text-primary-lighter">
+                        <li><a href="about.html" class="hover:text-white transition-colors">学校简介</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">历史沿革</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">办学理念</a></li>
+                        <li><a href="campus-facilities.html" class="hover:text-white transition-colors">校园设施</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">荣誉成就</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">教育教学</h3>
+                    <ul class="space-y-2 text-sm text-primary-lighter">
+                        <li><a href="#" class="hover:text-white transition-colors">师资力量</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">教学成果</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">课程设置</a></li>
+                        <li><a href="admission.html" class="hover:text-white transition-colors">招生信息</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">校园活动</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">资源服务</h3>
+                    <ul class="space-y-2 text-sm text-primary-lighter">
+                        <li><a href="#" class="hover:text-white transition-colors">资源中心</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">图书馆</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">校历查询</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">联系我们</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">常见问题</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">联系我们</h3>
+                    <ul class="space-y-3 text-sm text-primary-lighter">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker mt-1 mr-3"></i>
+                            <span>广东省茂名市高州市文明路123号</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone mr-3"></i>
+                            <span>0668-1234567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope mr-3"></i>
+                            <span>info@gz2z.edu.cn</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-clock-o mr-3"></i>
+                            <span>工作日: 8:00-17:30</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 flex space-x-3">
+                        <a href="#" class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                            <i class="fa fa-weixin"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-primary-light/30 text-center text-sm text-primary-lighter">
+                <p>Copyright © 2025 高州市第二中学. 粤ICP备12345678号</p>
+                <p class="mt-2">设计开发：高州市第二中学信息中心</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 分类切换功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.p-2 button');
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 移除所有按钮的激活状态
+                    categoryButtons.forEach(btn => btn.classList.remove('category-active'));
+                    // 添加当前按钮的激活状态
+                    this.classList.add('category-active');
+                    
+                    // 这里可以添加加载对应内容的逻辑
+                    console.log('切换到：', this.textContent.trim());
+                });
+            });
+        });
+    </script>
+</body>
+</html>
